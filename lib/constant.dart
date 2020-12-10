@@ -21,7 +21,7 @@ const kRoomText = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const kRightGradientColor = Color(0x443FC4CC);
+const kRightGradientColor = Color(0x333FC4CC);
 
 const kLeftGradientColor = Color(0x447C2AE8);
 

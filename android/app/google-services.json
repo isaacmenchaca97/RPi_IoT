@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971910305606",
+    "project_id": "rpiiot-5ff1b",
+    "storage_bucket": "rpiiot-5ff1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971910305606:android:71259ae8a8dc6c1aad3747",
+        "android_client_info": {
+          "package_name": "com.isaacm.rpi_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971910305606-flo0uc6ur9vtb2i4btkgocsck6svsu50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9hyCgebNuA98ciozqar3RNJ3sFIy9R_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971910305606-flo0uc6ur9vtb2i4btkgocsck6svsu50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
