@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constant.dart';
-import '../r_pi_io_t_icons_icons.dart';
+import '../libreria_iconos/r_pi_io_t_icons_icons.dart';
 import '../components/reusable_card.dart';
 import 'package:rpi_iot/components/content_card.dart';
 
@@ -9,7 +9,10 @@ class InitPage extends StatefulWidget {
   _InitPageState createState() => _InitPageState();
 }
 
-bool giveVerse = false;
+bool securityValue = false;
+bool lightValue = false;
+bool tvValue = false;
+bool soundValue = false;
 
 class _InitPageState extends State<InitPage> {
   @override
@@ -82,10 +85,10 @@ class _InitPageState extends State<InitPage> {
                                   switchContent: Container(
                                     alignment: Alignment.bottomRight,
                                     child: Switch(
-                                        value: giveVerse,
+                                        value: securityValue,
                                         onChanged: (bool newValue) {
                                           setState(() {
-                                            giveVerse = newValue;
+                                            securityValue = newValue;
                                           });
                                         }),
                                   ),
@@ -100,10 +103,10 @@ class _InitPageState extends State<InitPage> {
                                   switchContent: Container(
                                     alignment: Alignment.bottomRight,
                                     child: Switch(
-                                        value: giveVerse,
+                                        value: lightValue,
                                         onChanged: (bool newValue) {
                                           setState(() {
-                                            giveVerse = newValue;
+                                            lightValue = newValue;
                                           });
                                         }),
                                   ),
@@ -124,10 +127,10 @@ class _InitPageState extends State<InitPage> {
                                   switchContent: Container(
                                     alignment: Alignment.bottomRight,
                                     child: Switch(
-                                        value: giveVerse,
+                                        value: tvValue,
                                         onChanged: (bool newValue) {
                                           setState(() {
-                                            giveVerse = newValue;
+                                            tvValue = newValue;
                                           });
                                         }),
                                   ),
@@ -142,10 +145,10 @@ class _InitPageState extends State<InitPage> {
                                   switchContent: Container(
                                     alignment: Alignment.bottomRight,
                                     child: Switch(
-                                        value: giveVerse,
+                                        value: soundValue,
                                         onChanged: (bool newValue) {
                                           setState(() {
-                                            giveVerse = newValue;
+                                            soundValue = newValue;
                                           });
                                         }),
                                   ),
@@ -166,6 +169,3 @@ class _InitPageState extends State<InitPage> {
     );
   }
 }
-
-
-
