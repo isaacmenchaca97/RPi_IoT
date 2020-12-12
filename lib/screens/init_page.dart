@@ -14,11 +14,11 @@ bool securityValue = false;
 bool lightValue = false;
 bool tvValue = false;
 bool soundValue = false;
+var database = FirebaseDatabase.instance.reference();
 
 class _InitPageState extends State<InitPage> {
   @override
   Widget build(BuildContext context) {
-    var database = FirebaseDatabase.instance.reference();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -91,6 +91,8 @@ class _InitPageState extends State<InitPage> {
                                         onChanged: (bool newValue) {
                                           setState(() {
                                             securityValue = newValue;
+                                            database.update(
+                                                {'camara': securityValue});
                                           });
                                         }),
                                   ),
@@ -109,7 +111,8 @@ class _InitPageState extends State<InitPage> {
                                         onChanged: (bool newValue) {
                                           setState(() {
                                             lightValue = newValue;
-                                            database.update({'light': lightValue});
+                                            database
+                                                .update({'light': lightValue});
                                           });
                                         }),
                                   ),
