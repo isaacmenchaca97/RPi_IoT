@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/init_page.dart';
-
+import 'flutterfire_core_test.dart';
 void main() => runApp(RPiIoT());
 
 class RPiIoT extends StatelessWidget {
