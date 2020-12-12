@@ -3,8 +3,7 @@ import '../constant.dart';
 import '../libreria_iconos/r_pi_io_t_icons_icons.dart';
 import '../components/reusable_card.dart';
 import 'package:rpi_iot/components/content_card.dart';
-
-
+import 'package:firebase_database/firebase_database.dart';
 
 class InitPage extends StatefulWidget {
   @override
@@ -17,9 +16,9 @@ bool tvValue = false;
 bool soundValue = false;
 
 class _InitPageState extends State<InitPage> {
-  
   @override
   Widget build(BuildContext context) {
+    var database = FirebaseDatabase.instance.reference();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -110,6 +109,7 @@ class _InitPageState extends State<InitPage> {
                                         onChanged: (bool newValue) {
                                           setState(() {
                                             lightValue = newValue;
+                                            database.update({'light': lightValue});
                                           });
                                         }),
                                   ),
