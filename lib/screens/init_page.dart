@@ -4,6 +4,7 @@ import '../libreria_iconos/r_pi_io_t_icons_icons.dart';
 import '../components/reusable_card.dart';
 import 'package:rpi_iot/components/content_card.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:rpi_iot/screens/security_camara.dart';
 
 class InitPage extends StatefulWidget {
   @override
@@ -81,6 +82,15 @@ class _InitPageState extends State<InitPage> {
                           children: [
                             Expanded(
                               child: ReusableCard(
+                                onTap: () {
+                                  print("security camara press");
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SecurityCamara(),
+                                    ),
+                                  );
+                                },
                                 child: ContentCard(
                                   iconGatget: RPiIoTIcons.cctv,
                                   textDescription: 'Security Camera',
