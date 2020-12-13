@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/error_fire.dart';
-import 'screens/loading_fire.dart';
+import 'firebase_screens/error_fire.dart';
+import 'firebase_screens/loading_fire.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/init_page.dart';
 
