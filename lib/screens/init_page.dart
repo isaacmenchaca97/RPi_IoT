@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rpi_iot/libreria_iconos/r_pi_io_t_icons2_0_icons.dart';
+import 'package:rpi_iot/screens/smart_light.dart';
 import '../constant.dart';
 import '../libreria_iconos/r_pi_io_t_icons_icons.dart';
 import '../components/reusable_card.dart';
@@ -101,8 +102,7 @@ class _InitPageState extends State<InitPage> {
                                         onChanged: (bool newValue) {
                                           setState(() {
                                             fanValue = newValue;
-                                            database.update(
-                                                {'fan': fanValue});
+                                            database.update({'fan': fanValue});
                                           });
                                         }),
                                   ),
@@ -111,6 +111,14 @@ class _InitPageState extends State<InitPage> {
                             ),
                             Expanded(
                               child: ReusableCard(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SmartLight(),
+                                    ),
+                                  );
+                                },
                                 child: ContentCard(
                                   iconGatget: RPiIoTIcons.light_svg,
                                   textDescription: 'Smart Light',
