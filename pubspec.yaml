@@ -74,7 +74,10 @@ flutter:
         - asset: fonts/Poppins-SemiBold.ttf
     - family:  RPiIoTIcons
       fonts:
-       - asset: fonts/RPiIoTIcons.ttf
+        - asset: fonts/RPiIoTIcons.ttf
+    - family:  RPiIoTIcons2_0
+      fonts:
+        - asset: fonts/RPiIoTIcons2_0.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

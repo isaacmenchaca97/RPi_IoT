@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:rpi_iot/libreria_iconos/r_pi_io_t_icons2_0_icons.dart';
 import '../constant.dart';
 import '../libreria_iconos/r_pi_io_t_icons_icons.dart';
 import '../components/reusable_card.dart';
 import 'package:rpi_iot/components/content_card.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:rpi_iot/screens/security_camara.dart';
+import 'package:rpi_iot/screens/smart_fan.dart';
 
 class InitPage extends StatefulWidget {
   @override
   _InitPageState createState() => _InitPageState();
 }
 
-bool securityValue = false;
+bool fanValue = false;
 bool lightValue = false;
 bool tvValue = false;
 bool soundValue = false;
@@ -83,26 +84,25 @@ class _InitPageState extends State<InitPage> {
                             Expanded(
                               child: ReusableCard(
                                 onTap: () {
-                                  print("security camara press");
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SecurityCamara(),
+                                      builder: (context) => SmartFan(),
                                     ),
                                   );
                                 },
                                 child: ContentCard(
-                                  iconGatget: RPiIoTIcons.cctv,
-                                  textDescription: 'Security Camera',
+                                  iconGatget: RPiIoTIcons2_0.fan_svg,
+                                  textDescription: 'Smart Fan',
                                   switchContent: Container(
                                     alignment: Alignment.bottomRight,
                                     child: Switch(
-                                        value: securityValue,
+                                        value: fanValue,
                                         onChanged: (bool newValue) {
                                           setState(() {
-                                            securityValue = newValue;
+                                            fanValue = newValue;
                                             database.update(
-                                                {'camara': securityValue});
+                                                {'fan': fanValue});
                                           });
                                         }),
                                   ),
