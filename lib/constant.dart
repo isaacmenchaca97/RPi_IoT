@@ -7,7 +7,7 @@ const kHeaderText = TextStyle(
 );
 
 const kSubtitleText = TextStyle(
-  fontSize: 15,
+  fontSize: 14,
   fontFamily: 'Quicksand',
   color: Color(0xFFAEADB9),
   letterSpacing: -0.7,
@@ -15,7 +15,7 @@ const kSubtitleText = TextStyle(
 );
 
 const kRoomText = TextStyle(
-  fontSize: 19,
+  fontSize: 18,
   fontFamily: 'Quicksand',
   letterSpacing: -0.7,
   fontWeight: FontWeight.bold,

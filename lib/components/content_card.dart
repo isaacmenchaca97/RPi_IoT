@@ -16,7 +16,7 @@ class ContentCard extends StatelessWidget {
         children: [
           Icon(
             iconGatget,
-            size: 45,
+            size: 40,
           ),
           // SizedBox(height: 20),
           Text(
