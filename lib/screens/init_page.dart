@@ -32,8 +32,8 @@ class _InitPageState extends State<InitPage> {
           ),
         ),
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: ListView(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: 27,
@@ -46,144 +46,143 @@ class _InitPageState extends State<InitPage> {
                   textAlign: TextAlign.start,
                 ),
               ),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: 28,
+              Container(
+                height: 550,
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(
+                      height: 28,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'A total of 4 devices',
+                            style: kSubtitleText,
+                          ),
+                          Text(
+                            'Living Room',
+                            style: kRoomText,
+                          ),
+                        ],
                       ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Text(
-                              'A total of 4 devices',
-                              style: kSubtitleText,
-                            ),
-                            Text(
-                              'Living Room',
-                              style: kRoomText,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 28,
-                      ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: ReusableCard(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SmartFan(),
-                                    ),
-                                  );
-                                },
-                                child: ContentCard(
-                                  iconGatget: RPiIoTIcons2_0.fan_svg,
-                                  textDescription: 'Smart Fan',
-                                  switchContent: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: Switch(
-                                        value: fanValue,
-                                        onChanged: (bool newValue) {
-                                          setState(() {
-                                            fanValue = newValue;
-                                            database.update({'fan': fanValue});
-                                          });
-                                        }),
+                    ),
+                    SizedBox(
+                      height: 28,
+                    ),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ReusableCard(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SmartFan(),
                                   ),
+                                );
+                              },
+                              child: ContentCard(
+                                iconGatget: RPiIoTIcons2_0.fan_svg,
+                                textDescription: 'Smart Fan',
+                                switchContent: Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: Switch(
+                                      value: fanValue,
+                                      onChanged: (bool newValue) {
+                                        setState(() {
+                                          fanValue = newValue;
+                                          database.update({'fan': fanValue});
+                                        });
+                                      }),
                                 ),
                               ),
                             ),
-                            Expanded(
-                              child: ReusableCard(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SmartLight(),
-                                    ),
-                                  );
-                                },
-                                child: ContentCard(
-                                  iconGatget: RPiIoTIcons.light_svg,
-                                  textDescription: 'Smart Light',
-                                  switchContent: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: Switch(
-                                        value: lightValue,
-                                        onChanged: (bool newValue) {
-                                          setState(() {
-                                            lightValue = newValue;
-                                            database
-                                                .update({'light': lightValue});
-                                          });
-                                        }),
+                          ),
+                          Expanded(
+                            child: ReusableCard(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SmartLight(),
                                   ),
+                                );
+                              },
+                              child: ContentCard(
+                                iconGatget: RPiIoTIcons.light_svg,
+                                textDescription: 'Smart Light',
+                                switchContent: Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: Switch(
+                                      value: lightValue,
+                                      onChanged: (bool newValue) {
+                                        setState(() {
+                                          lightValue = newValue;
+                                          database
+                                              .update({'light': lightValue});
+                                        });
+                                      }),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: ReusableCard(
-                                child: ContentCard(
-                                  iconGatget: RPiIoTIcons.smart_tv_svg,
-                                  textDescription: 'Smart TV',
-                                  switchContent: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: Switch(
-                                        value: tvValue,
-                                        onChanged: (bool newValue) {
-                                          setState(() {
-                                            tvValue = newValue;
-                                          });
-                                        }),
-                                  ),
+                    ),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ReusableCard(
+                              child: ContentCard(
+                                iconGatget: RPiIoTIcons.smart_tv_svg,
+                                textDescription: 'Smart TV',
+                                switchContent: Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: Switch(
+                                      value: tvValue,
+                                      onChanged: (bool newValue) {
+                                        setState(() {
+                                          tvValue = newValue;
+                                        });
+                                      }),
                                 ),
                               ),
                             ),
-                            Expanded(
-                              child: ReusableCard(
-                                child: ContentCard(
-                                  iconGatget: RPiIoTIcons.speaker_svg,
-                                  textDescription: 'Smart Sound',
-                                  switchContent: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: Switch(
-                                        value: soundValue,
-                                        onChanged: (bool newValue) {
-                                          setState(() {
-                                            soundValue = newValue;
-                                          });
-                                        }),
-                                  ),
+                          ),
+                          Expanded(
+                            child: ReusableCard(
+                              child: ContentCard(
+                                iconGatget: RPiIoTIcons.speaker_svg,
+                                textDescription: 'Smart Sound',
+                                switchContent: Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: Switch(
+                                      value: soundValue,
+                                      onChanged: (bool newValue) {
+                                        setState(() {
+                                          soundValue = newValue;
+                                        });
+                                      }),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
